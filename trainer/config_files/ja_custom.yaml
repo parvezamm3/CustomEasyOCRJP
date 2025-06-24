@@ -88,8 +88,8 @@ select_data: 'train'
 batch_ratio: '1'
 total_data_usage_ratio: 1.0
 batch_max_length: 34
-imgH: 32
-imgW: 300
+imgH: 64
+imgW: 600
 rgb: False
 contrast_adjust: False
 sensitive: True
@@ -105,5 +105,5 @@ output_channel: 256
 hidden_size: 256
 decode: 'greedy'
 new_prediction: True
-freeze_FeatureFxtraction: False
+freeze_FeatureFxtraction: True
 freeze_SequenceModeling: False
