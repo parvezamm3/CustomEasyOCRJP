@@ -72,10 +72,10 @@ experiment_name: 'ja_receipt_cpu_demo'
 train_data: '/content/drive/MyDrive/receipt_project/data/training_data/all_data'
 valid_data: '/content/drive/MyDrive/receipt_project/data/training_data/all_data/val'
 manualSeed: 1111
-workers: 6            # single worker for CPU
+workers: 4            # single worker for CPU
 batch_size: 16         # reduce load per batch
-num_iter: 10000       # fewer iterations for demo
-valInterval: 2000     # validate more frequently
+num_iter: 1000       # fewer iterations for demo
+valInterval: 500     # validate more frequently
 saved_model: '/content/drive/MyDrive/receipt_project/data/training_data/saved_models/japanese_g2.pth'       # start from scratch or load Japanese pre‑trained
 FT: True
 optim: False
@@ -88,8 +88,8 @@ select_data: 'train'
 batch_ratio: '1'
 total_data_usage_ratio: 1.0
 batch_max_length: 34
-imgH: 64
-imgW: 600
+imgH: 32
+imgW: 300
 rgb: False
 contrast_adjust: False
 sensitive: True
