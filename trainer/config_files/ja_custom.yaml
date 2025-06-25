@@ -83,8 +83,8 @@ valid_data: '/content/drive/MyDrive/receipt_project/data/training_data/all_data/
 manualSeed: 1111
 workers: 2            # single worker for CPU
 batch_size: 8         # reduce load per batch
-num_iter: 1000       # fewer iterations for demo
-valInterval: 500     # validate more frequently
+num_iter: 10000       # fewer iterations for demo
+valInterval: 1000     # validate more frequently
 saved_model: '/content/drive/MyDrive/receipt_project/data/training_data/saved_models/japanese_g2.pth'       # start from scratch or load Japanese pre‑trained
 FT: True
 optim: False
