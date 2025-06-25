@@ -31,6 +31,8 @@ def validation(model, criterion, evaluation_loader, converter, opt, device):
         text_for_pred = torch.LongTensor(batch_size, opt.batch_max_length + 1).fill_(0).to(device)
 
         text_for_loss, length_for_loss = converter.encode(labels, batch_max_length=opt.batch_max_length)
+        text_for_loss = text_for_loss.to(device)    # Move to GPU
+        length_for_loss = length_for_loss.to(device)  # Move to GPU
         
         start_time = time.time()
         if 'CTC' in opt.Prediction:
@@ -39,9 +41,18 @@ def validation(model, criterion, evaluation_loader, converter, opt, device):
 
             # Calculate evaluation loss for CTC decoder.
             preds_size = torch.IntTensor([preds.size(1)] * batch_size)
-            print(preds.size(1), text_for_loss, preds_size, length_for_loss)
+            preds_gpu = preds.log_softmax(2).permute(1, 0, 2).contiguous().to(device)
+            preds_size = preds_size.to(device)
+            cost = criterion(preds_gpu, text_for_loss.contiguous(), preds_size, length_for_loss.contiguous())
+            # print(preds.size(1), text_for_loss, preds_size, length_for_loss)
+            # Move tensors to CPU before calculating loss
+            # preds_cpu = preds.log_softmax(2).permute(1, 0, 2).contiguous().cpu()
+            # text_for_loss_cpu = text_for_loss.contiguous().cpu()
+            # preds_size_cpu = preds_size.cpu()
+            # length_for_loss_cpu = length_for_loss.cpu()
+            # cost = criterion(preds_cpu, text_for_loss_cpu, preds_size_cpu, length_for_loss_cpu)
             # permute 'preds' to use CTCloss format
-            cost = criterion(preds.log_softmax(2).permute(1, 0, 2).contiguous(), text_for_loss.contiguous(), preds_size, length_for_loss)
+            # cost = criterion(preds.log_softmax(2).permute(1, 0, 2).contiguous(), text_for_loss.contiguous(), preds_size, length_for_loss)
 
             if opt.decode == 'greedy':
                 # Select max probabilty (greedy decoding) then decode index to character

@@ -55,26 +55,22 @@ number: '0123456789'
 #   抄 斎 魯 棟 慈 檎 琴 芽 顕 汲 誓 敢 遷 憩 廻 巾 遮 巣 郭 措 荘 國 悦 穫 憤 蒼 刈 汎 尼 累 妥 盆 騙 軌 賑 贅 韻 悶 堵 鹸 
 #   埃 撒 孕 岬 菱 椎 謡 乃 疎 臆 拗 漬 亨 播 妬 訝 艶 勾 霞 溝 捻 陳 銅 虐 攣 肪 犠 牲 摂 蓑 弦 宛 貶 厭 爺 賭 遍 藻 樫 嗅 
 #   紐 紳 炬 卸 紋 釧 琢 賠 塁 班 腺 瘍 坪 愉 嘉 乙 湘 股 汁 痙 艦
-symbol: " 。 ・ 、 . ✕ *  」 ]  !  :  %  ¥  (  ) / ~  , -"
+symbol: "(¥,)-:+*!.;」]/・〈〉〒、~✕%@\"₋。"
 lang_char: |
-    w o r d s 領 収 書 車 両 申 込 金 現 内 訳 代 ク レ ジ ッ ト カ ー ド 印 紙 証 券 商 品 任 
-    意 自 動 保 険 料 振 入 上 記 の 通 り 正 に 致 し ま た 〒 名 古 屋 市 北 区 山 田 丁 
-    目 番 号 株 式 会 社 T E L 表 鉄 A U O 年 月 日 C N 横 シ ス テ ム 経 営 研 究 所 様整 備 検 者 
-    費 用 賠 責 重 量 税 指 定 手 続 小 切 種 別 但注 お 客 額 を 訂 も 取 扱 な い 複 写 で は 無 効 
-    す 又 後 規 発 行 場 合 充 当 つ き と る 万 円 未 満 非 課 以 下 超時 分 対 象 標 準 率 J B 担 木 
-    曽 路 徳 川 店 登 録 明 綱 本昭 和 白 水 飲 食 刺 身 X 個 十 六 ぐ ろ 天 婦 羅 黄 揚 げ べ 比 膳 
-    計 点こ 来 誠 あ が う ご さ 消 伝 票 等 a p l t i n セ ル フ 町 愛 知 県 東 大 根 S 売 へ引 Y K I M P 
-    軽 油 数  単 価 @ 体 承 認 利 有 期 限 企 業 コ 処 理 付 y 問 せ ア ポ ロ ヨ ン 受 中 み 礦 支タ 払 方 法 
-    括 か ん 志 賀 公 園 城 楽 イ 可 能 ボ D 反 映 れ m z ギ ブ ゼ ラ 便 獲 得 予 購 常 G v e メ や 初 層 甲 グ 
-    言 ざ 森埋 わ
+    abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZお造り三種盛点伝票軽油内税本体合計領 
+    収書年月日時分様消費対象標準率上記正にいたしま株式会社木曽路徳川店名古屋市昭和区白金登録番号レ
+    シート明綱飲食刺身手職個十六ぐろ天麩羅黄揚げ婦べ比膳等ご来誠あがとうざす支礦セルフ志賀公園愛知
+    県北城町一クジッカド売取引通数量単価額承認払方法括利用可能ポイン獲得予定処理付横山ステム経営研
+    究所車両申込代整備商品訳検者自賠責保険料重指続印紙証任意動現別小切券振鉄田丁目き焼初層か甲グラ
+    タ楼海老の筍菜稚鮎馬籠茶蒸大ロホ酢味噌掛け蛤土瓶
 
 experiment_name: 'ja_receipt_cpu_demo'
 train_data: 'all_data'
 valid_data: 'all_data/val'
 manualSeed: 1111
-workers: 4            # single worker for CPU
-batch_size: 16         # reduce load per batch
-num_iter: 1000       # fewer iterations for demo
+workers: 1            # single worker for CPU
+batch_size: 16        # reduce load per batch
+num_iter: 10000       # fewer iterations for demo
 valInterval: 500     # validate more frequently
 saved_model: 'saved_models/japanese_g2.pth'       # start from scratch or load Japanese pre‑trained
 FT: True

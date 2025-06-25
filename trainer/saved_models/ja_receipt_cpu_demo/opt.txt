@@ -1,0 +1,116 @@
+------------ Options -------------
+number: 0123456789
+symbol: (¥,)-:+*!.;」]/・〈〉〒、~✕%@"₋。
+lang_char: abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZお造り三種盛点伝票軽油内税本体合計領 
+収書年月日時分様消費対象標準率上記正にいたしま株式会社木曽路徳川店名古屋市昭和区白金登録番号レ
+シート明綱飲食刺身手職個十六ぐろ天麩羅黄揚げ婦べ比膳等ご来誠あがとうざす支礦セルフ志賀公園愛知
+県北城町一クジッカド売取引通数量単価額承認払方法括利用可能ポイン獲得予定処理付横山ステム経営研
+究所車両申込代整備商品訳検者自賠責保険料重指続印紙証任意動現別小切券振鉄田丁目き焼初層か甲グラ
+タ楼海老の筍菜稚鮎馬籠茶蒸大ロホ酢味噌掛け蛤土瓶
+
+experiment_name: ja_receipt_cpu_demo
+train_data: all_data
+valid_data: all_data/val
+manualSeed: 1111
+workers: 1
+batch_size: 8
+num_iter: 1000
+valInterval: 500
+saved_model: saved_models/japanese_g2.pth
+FT: True
+optim: False
+lr: 1.0
+beta1: 0.9
+rho: 0.95
+eps: 1e-08
+grad_clip: 5
+select_data: ['train']
+batch_ratio: ['1']
+total_data_usage_ratio: 1.0
+batch_max_length: 34
+imgH: 64
+imgW: 600
+rgb: False
+contrast_adjust: False
+sensitive: True
+PAD: True
+data_filtering_off: False
+Transformation: None
+FeatureExtraction: VGG
+SequenceModeling: BiLSTM
+Prediction: CTC
+num_fiducial: 20
+input_channel: 1
+output_channel: 256
+hidden_size: 256
+decode: greedy
+new_prediction: True
+freeze_FeatureFxtraction: True
+freeze_SequenceModeling: True
+character: 0123456789(¥,)-:+*!.;」]/・〈〉〒、~✕%@"₋。abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZお造り三種盛点伝票軽油内税本体合計領 
+収書年月日時分様消費対象標準率上記正にいたしま株式会社木曽路徳川店名古屋市昭和区白金登録番号レ
+シート明綱飲食刺身手職個十六ぐろ天麩羅黄揚げ婦べ比膳等ご来誠あがとうざす支礦セルフ志賀公園愛知
+県北城町一クジッカド売取引通数量単価額承認払方法括利用可能ポイン獲得予定処理付横山ステム経営研
+究所車両申込代整備商品訳検者自賠責保険料重指続印紙証任意動現別小切券振鉄田丁目き焼初層か甲グラ
+タ楼海老の筍菜稚鮎馬籠茶蒸大ロホ酢味噌掛け蛤土瓶
+
+num_class: 326
+---------------------------------------
+------------ Options -------------
+number: 0123456789
+symbol: (¥,)-:+*!.;」]/・〈〉〒、~✕%@"₋。
+lang_char: abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZお造り三種盛点伝票軽油内税本体合計領 
+収書年月日時分様消費対象標準率上記正にいたしま株式会社木曽路徳川店名古屋市昭和区白金登録番号レ
+シート明綱飲食刺身手職個十六ぐろ天麩羅黄揚げ婦べ比膳等ご来誠あがとうざす支礦セルフ志賀公園愛知
+県北城町一クジッカド売取引通数量単価額承認払方法括利用可能ポイン獲得予定処理付横山ステム経営研
+究所車両申込代整備商品訳検者自賠責保険料重指続印紙証任意動現別小切券振鉄田丁目き焼初層か甲グラ
+タ楼海老の筍菜稚鮎馬籠茶蒸大ロホ酢味噌掛け蛤土瓶
+
+experiment_name: ja_receipt_cpu_demo
+train_data: all_data
+valid_data: all_data/val
+manualSeed: 1111
+workers: 1
+batch_size: 16
+num_iter: 10000
+valInterval: 500
+saved_model: saved_models/japanese_g2.pth
+FT: True
+optim: False
+lr: 1.0
+beta1: 0.9
+rho: 0.95
+eps: 1e-08
+grad_clip: 5
+select_data: ['train']
+batch_ratio: ['1']
+total_data_usage_ratio: 1.0
+batch_max_length: 34
+imgH: 64
+imgW: 600
+rgb: False
+contrast_adjust: False
+sensitive: True
+PAD: True
+data_filtering_off: False
+Transformation: None
+FeatureExtraction: VGG
+SequenceModeling: BiLSTM
+Prediction: CTC
+num_fiducial: 20
+input_channel: 1
+output_channel: 256
+hidden_size: 256
+decode: greedy
+new_prediction: True
+freeze_FeatureFxtraction: True
+freeze_SequenceModeling: False
+character: 0123456789(¥,)-:+*!.;」]/・〈〉〒、~✕%@"₋。abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZお造り三種盛点伝票軽油内税本体合計領 
+収書年月日時分様消費対象標準率上記正にいたしま株式会社木曽路徳川店名古屋市昭和区白金登録番号レ
+シート明綱飲食刺身手職個十六ぐろ天麩羅黄揚げ婦べ比膳等ご来誠あがとうざす支礦セルフ志賀公園愛知
+県北城町一クジッカド売取引通数量単価額承認払方法括利用可能ポイン獲得予定処理付横山ステム経営研
+究所車両申込代整備商品訳検者自賠責保険料重指続印紙証任意動現別小切券振鉄田丁目き焼初層か甲グラ
+タ楼海老の筍菜稚鮎馬籠茶蒸大ロホ酢味噌掛け蛤土瓶
+
+num_class: 326
+---------------------------------------
