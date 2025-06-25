@@ -82,7 +82,7 @@ train_data: '/content/drive/MyDrive/receipt_project/data/training_data/all_data'
 valid_data: '/content/drive/MyDrive/receipt_project/data/training_data/all_data/val'
 manualSeed: 1111
 workers: 2            # single worker for CPU
-batch_size: 8         # reduce load per batch
+batch_size: 32         # reduce load per batch
 num_iter: 10000       # fewer iterations for demo
 valInterval: 1000     # validate more frequently
 saved_model: '/content/drive/MyDrive/receipt_project/data/training_data/saved_models/japanese_g2.pth'       # start from scratch or load Japanese pre‑trained
@@ -114,5 +114,5 @@ output_channel: 256
 hidden_size: 256
 decode: 'greedy'
 new_prediction: True
-freeze_FeatureFxtraction: True
-freeze_SequenceModeling: True
+freeze_FeatureFxtraction: False
+freeze_SequenceModeling: False
