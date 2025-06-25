@@ -68,25 +68,21 @@ number: '0123456789'
 #   藁 藍 藤 藻 蘇 蘭 虎 虚 虫 虹 虻 蚊 蛇 蛍 蛭 蜂 蜜 蝦 蝶 融 
 #   螺 蟹 蟻 血 衆 行 術 街 衛 衝 衡 衣 表  
 
-symbol: "( ¥ , ) - : + * ! . ; 」 ] 。 / ・ 〈 〉 〒 、~ ✕ % @ \" "
+symbol: "(¥,)-:+*!.;」]/・〈〉〒、~✕%@\"₋。"
 lang_char: |
-    w o r d s 0 1 7 N 6 誠 に あ り が と う ご ざ い ま す 木 曽 路 領 収 書 内 消 費 税 対 象 2 3 9 
-    印 T E L  5 4 8 本 社 名 古 屋 市 昭 和 区 白 金 明 綱 伝 票 タ 森 店 馬 籠 茶 蒸 ロ ー ス き 焼 定 
-    食 蛤 筍 の 土 瓶 し 等 J C B 十 六 a p l t i n セ ル フ 徳 川 町 愛  知 県 東 大 根 一 S 登 録 番 号 ク 
-    レ ジ ッ ト カ ド 売 上 車 検 は 当 へ 年 月 日 取 引 通 Y U K I O A M 様 X P 数 量 単 価 体 軽 油 有 
-    効 期 限 企 業 コ 処 理 付 y お 問 合 せ ア ポ テ シ ヨ ン 受 中 申 込 み で m z ギ 券 円 分 を プ ゼ  
-    礦 株 支 計 額 承 認 払 方 法 括 利 用 か ん 両 現 訳 代 紙  証 商 品 任 意 自 動 保 険 料 振 入 記 正 
-    致 た 北 山 田 丁 目 式 会 表 鉄 横 ム 経 営 研 究 所 整  備 者 賠 責 重 指 手 続 小 切 種 別 但 注 客 
-    訂 も  扱 な 複 写 無 又 後 規 発 行 場 充 つ る 万 未 満 非 課 以 下 超 時 標 準 率 担 水 飲  刺 身 個 ぐ 
-    ろ 天 婦 羅 黄 揚 げ べ 比 膳 点 こ 来 さ 志 賀 公 園 城 楽 イ 可 能 ボ D 反 映 れ ブ ラ 便 獲 得 予 購 常 
-    G v e メ や 初 層 甲 グ 言 埋 わ 楼 海 老 乗 菜 稚 鮎 ホ 酢 味 噌 掛 け 造 三 盛
+    abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZお造り三種盛点伝票軽油内税本体合計領 
+    収書年月日時分様消費対象標準率上記正にいたしま株式会社木曽路徳川店名古屋市昭和区白金登録番号レ
+    シート明綱飲食刺身手職個十六ぐろ天麩羅黄揚げ婦べ比膳等ご来誠あがとうざす支礦セルフ志賀公園愛知
+    県北城町一クジッカド売取引通数量単価額承認払方法括利用可能ポイン獲得予定処理付横山ステム経営研
+    究所車両申込代整備商品訳検者自賠責保険料重指続印紙証任意動現別小切券振鉄田丁目き焼初層か甲グラ
+    タ楼海老の筍菜稚鮎馬籠茶蒸大ロホ酢味噌掛け蛤土瓶
 
 experiment_name: 'ja_receipt_cpu_demo'
 train_data: '/content/drive/MyDrive/receipt_project/data/training_data/all_data'
 valid_data: '/content/drive/MyDrive/receipt_project/data/training_data/all_data/val'
 manualSeed: 1111
-workers: 4            # single worker for CPU
-batch_size: 16         # reduce load per batch
+workers: 2            # single worker for CPU
+batch_size: 8         # reduce load per batch
 num_iter: 1000       # fewer iterations for demo
 valInterval: 500     # validate more frequently
 saved_model: '/content/drive/MyDrive/receipt_project/data/training_data/saved_models/japanese_g2.pth'       # start from scratch or load Japanese pre‑trained
@@ -119,4 +115,4 @@ hidden_size: 256
 decode: 'greedy'
 new_prediction: True
 freeze_FeatureFxtraction: True
-freeze_SequenceModeling: False
+freeze_SequenceModeling: True
